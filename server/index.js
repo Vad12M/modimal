@@ -17,10 +17,10 @@ const app = express();
 app.use(express.json());
 
 // routes
-app.use('/auth', userRoutes);
-app.use('/colors', colorsRoutes);
-app.use('/sizes', sizesRoutes);
-app.use('/fabrics', fabricsRoutes);
+app.use('/api/auth', userRoutes);
+app.use('/api/colors', colorsRoutes);
+app.use('/api/sizes', sizesRoutes);
+app.use('/api/fabrics', fabricsRoutes);
 
 // ====================================
 

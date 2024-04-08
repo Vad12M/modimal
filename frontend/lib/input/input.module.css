@@ -4,7 +4,7 @@
 }
 
 .inputContainer input::placeholder {
-  @apply text-neutralGray opacity-100;
+  @apply text-neutralGray opacity-100 text-12 leading-6 capitalize;
 }
 
 .inputContainer.required {
@@ -12,5 +12,14 @@
 }
 
 .inputContainer.invalid {
-  @apply border-b-danger;
+  @apply border-danger text-danger;
 }
+
+.suffix {
+  @apply absolute right-3 top-3;
+}
+
+.suffixInput {
+  @apply pr-12;
+}
+

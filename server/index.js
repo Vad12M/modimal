@@ -1,7 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import userRoutes from './routes/authRoutes.js';
+import cors from 'cors';
 import dotenv from 'dotenv';
+import userRoutes from './routes/authRoutes.js';
 import colorsRoutes from "./routes/colorsRoutes.js";
 import sizesRoutes from "./routes/sizesRoutes.js";
 import fabricsRoutes from "./routes/fabricsRoutes.js";
@@ -14,6 +15,7 @@ mongoose
     .catch((err) => console.log('Error connecting to the database', err));
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 // routes

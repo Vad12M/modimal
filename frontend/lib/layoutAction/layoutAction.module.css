@@ -1,0 +1,66 @@
+.container {
+  @apply inline-flex justify-center items-center whitespace-nowrap duration-300;
+}
+
+.primaryBtn {
+  @apply text-white leading-24 font-medium bg-primary hover:opacity-80;
+}
+
+.primaryBtnDisabled {
+  @apply bg-grayLight hover:bg-grayLight;
+}
+
+.secondaryBtn {
+  @apply border-solid border border-primary items-center box-border;
+  @apply text-primaryDarker leading-20 font-medium;
+}
+
+.secondaryBtn:hover {
+  @apply text-white bg-primary;
+}
+
+.secondaryBtnDisabled,
+.secondaryBtnDisabled:hover {
+  @apply border-grayLight bg-white;
+  @apply text-grayLight;
+}
+
+.textButton {
+  @apply h-[52px] items-center relative !important;
+  @apply font-semibold leading-20;
+}
+
+.textButton:after {
+  @apply absolute left-0 bottom-0 w-full opacity-0 hover:opacity-100 duration-500;
+  content: '';
+  height: 2px;
+}
+
+.textButtonDisabled {
+  @apply text-grayLight hover:text-grayLight;
+}
+
+.darkStoneTextButtonColor {
+  @apply text-primary after:bg-primary;
+}
+
+.stellarBlueTextButtonColor {
+  @apply text-primaryDarker after:bg-primaryDarker;
+}
+
+.wFull {
+  @apply w-full;
+}
+
+.largeSize {
+  @apply py-3.5;
+}
+
+.mediumSize {
+  @apply py-3;
+}
+
+.smallSize {
+  @apply py-2;
+}
+

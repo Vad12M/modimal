@@ -1,10 +1,12 @@
 import styles from "./input.module.css";
 import Typography from "@/lib/typography/typography.component";
+import cx from 'classnames';
 
-interface IProps {
+export interface InputProps {
   placeholder?: string;
   value?: string | number;
   onUpdate?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  suffixComponent?: () => any;
   className?: string;
   disabled?: boolean;
   required?: boolean;
@@ -21,7 +23,21 @@ export default function Input({
   required,
   invalid,
   type,
-}: IProps) {
+  suffixComponent,
+}: InputProps) {
+
+  const renderSuffix = Boolean(suffixComponent) && (
+    <span className={styles.suffix}>{suffixComponent?.()}</span>
+  );
+
+  const inputStyles = cx(`${styles.inputContainer}`, {
+    [styles.suffixInput]: Boolean(suffixComponent),
+    // [styles.prefixInput]: Boolean(prefixComponent),
+    [styles.invalid]: invalid,
+    [styles.required]: required,
+  })
+
+
   return <div className={`flex flex-col space-y-1 ${className} ${disabled && 'opacity-60'}`}>
     <div className={'relative'}>
       {required && <Typography
@@ -30,15 +46,18 @@ export default function Input({
         text={'*'}
         className={'absolute top-1/2 -translate-y-1/2 left-1'}
       />}
-      <input
-        value={value}
-        onChange={onUpdate}
-        placeholder={placeholder}
-        disabled={disabled}
-        onClick={(e) => e.preventDefault()}
-        className={`${styles.inputContainer} ${required && styles.required} ${invalid && styles.invalid}`}
-        type={type || 'text'}
-      />
+      <div className="relative">
+        <input
+          value={value}
+          onChange={onUpdate}
+          placeholder={placeholder}
+          disabled={disabled}
+          onClick={(e) => e.preventDefault()}
+          className={inputStyles}
+          type={type || 'text'}
+        />
+        {renderSuffix}
+      </div>
     </div>
   </div>
 }

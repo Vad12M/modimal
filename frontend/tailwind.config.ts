@@ -5,9 +5,11 @@ const colors = {
   black: '#0C0C0C',
   mediumColor: "#969696",
 
+  primaryLight: '#D1D9CF',
   primary: '#748C70',
   primaryDark: '#5A6D57',
-  primaryLight: '#D1D9CF',
+  primaryDarker: '#343E32',
+
   neutralGray: '#404040',
   grayLight: '#CBCBCB',
 
@@ -30,6 +32,9 @@ module.exports = {
         lg: "1366px",
         xl: "1920px",
         "2xl": "2560px",
+      },
+      boxShadow: {
+        modalShadow: '0 24px 80px rgba(122, 112, 103, 0.25)',
       },
       fontFamily: {
         'montserrat': ['Montserrat', 'sans-serif'],

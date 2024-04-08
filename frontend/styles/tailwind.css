@@ -1711,11 +1711,6 @@ video {
 
 @font-face {
   font-family: HeleneHess-Regular;
-
-  src:
-    local("HeleneHess-Regular"),
-    url("fonts/HeleneHess-Regular.woff2") format("woff2");
-
   font-display: swap;
 }
 

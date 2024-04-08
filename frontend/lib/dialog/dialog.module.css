@@ -1,0 +1,57 @@
+.overlayStyles {
+  @apply fixed flex justify-center top-0 bottom-0 right-0 left-0 h-full;
+  background: rgba(30, 30, 30, 0.1);
+  z-index: 1000;
+}
+
+.modalContainer {
+  @apply bg-white relative !important;
+}
+
+.modalContent {
+  @apply outline-0 overflow-x-hidden bg-white relative sm:shadow-modalShadow;
+  @apply flex flex-col w-full h-full max-h-full sm:w-auto sm:h-auto sm:max-h-[90vh] m-0;
+  max-width: 1115px;
+}
+
+.closeButton {
+  @apply fixed sm:absolute top-0 ltr:left-auto ltr:right-0 rtl:right-auto rtl:left-0 rtl:sm:-left-14 ltr:sm:-right-14 md:-top-1.5 !important;
+  @apply flex justify-end grow py-2.5 mx-3 sm:mx-0 sm:py-0 rtl:float-left ltr:float-right !important;
+  z-index: 1000;
+}
+
+.modalContentScreen {
+  @apply md:flex h-screen bg-white w-screen !important;
+}
+
+.closeButtonScreen {
+  @apply absolute top-3 rtl:left-3 ltr:right-3 md:top-6 rtl:md:left-6 ltr:md:right-6 rtl:xl:left-20 ltr:xl:right-20 z-50;
+}
+
+.overlayStyles.bgTransparent {
+  @apply outline-0;
+  background: rgba(30, 30, 30, 0.35);
+}
+
+.modalContainer.bgTransparent,
+.modalContainer.bgTransparent .modalContent {
+  @apply shadow-none !important;
+}
+
+.overlayStyles.bgTransparent :global(.ReactModal__Content),
+.modalContainer.bgTransparent .modalContent {
+  @apply h-auto w-auto !important;
+}
+
+.bgTransparent .closeButton {
+  @apply -top-10 ltr:-right-3.5 rtl:left-3.5 ltr:sm:-right-1 rtl:sm:left-1 sm:-top-7 md:-top-1.5 rtl:md:-left-12 ltr:md:-right-12 !important;
+}
+
+.modalContent.widthScreen {
+  @apply max-w-[100vw] !important;
+}
+
+.modalContainer.widthScreen:focus-visible,
+.modalContainer.bgTransparent:focus-visible {
+  outline: transparent !important;
+}

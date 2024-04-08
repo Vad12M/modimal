@@ -6,6 +6,11 @@
   --color-brand: #748C70;
 }
 
+.m-container {
+  @apply mx-auto px-4;
+  max-width: 1224px;
+}
+
 body {
   @apply font-montserrat;
   max-width: 100vw;

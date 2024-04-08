@@ -10,6 +10,8 @@ export const texts = {
     'font-Montserrat text-12 leading-6 capitalize',
   bodySM:
     'font-Montserrat text-14 leading-7',
+  bodyMD:
+    'font-Montserrat text-16 leading-8',
   bodyLG:
     'font-Montserrat text-18 font-normal leading-8',
   captionMD:

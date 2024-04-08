@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { apiSlice } from "@/store/api/apiSlice";
 
 export function makeStore() {
   return configureStore({
     reducer: {
+      [apiSlice.reducerPath]: apiSlice.reducer,
     },
+    middleware: base => base().concat(apiSlice.middleware)
+
   });
 }
 
